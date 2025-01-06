@@ -1,0 +1,50 @@
+.search-bar {
+  border: 1px solid #999;
+  padding: 3px 5px;
+  border-radius: 30px;
+  height: 2em;
+  width: 245px;
+}
+
+.search-button {
+}
+
+.blog-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 横に3つ並べる */
+  gap: 20px;
+  padding: 20px;
+}
+
+.blog-card {
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  text-align: left;
+  padding: 15px;
+}
+
+.blog-image {
+  width: 100%;
+  height: auto;
+}
+
+.blog-title {
+  font-size: 18px;
+  margin: 10px 0;
+}
+
+.blog-content {
+  font-size: 14px;
+  color: #666;
+  margin: 10px 0;
+}
+
+.blog-category,
+.blog-author,
+.blog-posted-at {
+  font-size: 12px;
+  color: #888;
+  margin: 5px 0;
+}
