@@ -2,16 +2,16 @@
 
 import styles from "./writeblog.module.css";
 import React, { useState } from "react";
-import ImageUploader from "../../components/ImageUploader";
-import CreateTitle from "../../components/CreateTitle";
-import CreateDescription from "../../components/CreateDescription";
+import ImageUploader from "@/app/components/ImageUploader";
+import CreateTitle from "@/app/components/CreateTitle";
+import CreateDescription from "@/app/components/CreateDescription";
 
 const PostCreatePage = () => {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
-  const [image, setImage] = useState(null);
+  const [image, setImage] = useState<File | null>(null);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (image != null) {
       // eslint-disable-next-line no-console

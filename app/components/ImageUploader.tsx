@@ -1,12 +1,19 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState,useRef } from "react";
 
-const ImageUploader = ({ styles, onFileSelect }) => {
-  const [sizeError, setSizeError] = useState(false);
-  const [preview, setPreview] = useState(null);
+type ImageUploaderProps = {
+  styles: { [key: string]: string }; // CSS モジュールの型
+  onFileSelect: (file: File | null) => void; // ファイル選択時のコールバック
+};
 
-  const handleFileChange = (e) => {
-    const file = e.target.files[0];
+
+const ImageUploader: React.FC<ImageUploaderProps> = ({ styles, onFileSelect }) => {
+  const [sizeError, setSizeError] = useState<boolean>(false);
+  const [preview, setPreview] = useState<string | null>(null);
+  const fileInputRef = useRef<HTMLInputElement | null>(null); // useRefでinput要素を管理
+
+  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
     const maxSize = 1024 * 1024 * 5;
 
     if (file) {
@@ -20,13 +27,17 @@ const ImageUploader = ({ styles, onFileSelect }) => {
     }
   };
 
+  const handleClick = () => {
+    fileInputRef.current?.click();
+  };
+
   return (
     <div
       className={styles.uploader}
-      onClick={() => document.getElementById("fileInput").click()} // クリックでファイル選択をトリガー
-    >
+      onClick={handleClick}     >
       <input
-        id="fileInput"
+        ref={fileInputRef}
+        // id="fileInput"
         type="file"
         accept="image/*"
         onChange={handleFileChange}

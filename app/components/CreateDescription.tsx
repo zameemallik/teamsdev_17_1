@@ -1,9 +1,15 @@
 import React, { useState } from "react";
 
-const CreateDescription = ({ styles, description, setDescription }) => {
-  const [overText, setOverText] = useState(false);
+type CreateDescriptionProps={
+  styles: { [key: string]: string }; // CSS モジュールの型
+  description: string;
+  setDescription: (value: string) => void;
+}
 
-  const handleInputDescription = (e) => {
+const CreateDescription:React.FC<CreateDescriptionProps> = ({ styles, description, setDescription }) => {
+  const [overText, setOverText] = useState<boolean>(false);
+
+  const handleInputDescription = (e:React.ChangeEvent<HTMLTextAreaElement>) => {
     const inputText = e.target.value;
     if (inputText.length > 2000) {
       setOverText(true);
@@ -30,7 +36,7 @@ const CreateDescription = ({ styles, description, setDescription }) => {
         style={{ display: "block", marginBottom: "10px", minHeight: "225px", resize: "none", maxHeight: "450px" }}
         className={styles.BlogInput}
         id="BlogContentInput"
-        maxlength="2000"
+        maxLength={2000}
         value={description}
         placeholder="記事の内容を入力してください"
         onChange={handleInputDescription}

@@ -1,10 +1,18 @@
 "use client";
 import React, { useState } from "react";
 
-const CreateTitle = ({ styles, title, setTitle }) => {
-  const [overText, setOverText] = useState(false);
 
-  const handleInputTitle = (e) => {
+type CreateTitleProps = {
+  styles: { [key: string]: string };
+  title: string;
+  setTitle: (value: string) => void;
+};
+
+
+const CreateTitle: React.FC<CreateTitleProps> = ({ styles, title, setTitle }) => {
+  const [overText, setOverText] = useState<boolean>(false);
+
+  const handleInputTitle = (e: React.ChangeEvent<HTMLInputElement>) => {
     const inputText = e.target.value;
     if (inputText.length > 50) {
       setOverText(true);
@@ -30,7 +38,7 @@ const CreateTitle = ({ styles, title, setTitle }) => {
         id="BlogTitleInput"
         className={styles.BlogInput}
         type="text"
-        maxlength="50"
+        maxLength={50}
         value={title}
         placeholder="タイトルを入力してください"
         onChange={handleInputTitle}
