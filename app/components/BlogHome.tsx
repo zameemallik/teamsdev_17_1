@@ -1,4 +1,6 @@
 import "./bloghome.css";
+import Link from "next/link";
+import SearchIcon from "@mui/icons-material/Search";
 
 const blogs = [
   {
@@ -22,7 +24,8 @@ const blogs = [
   {
     id: 3,
     title: "ブログタイトル 3",
-    content: "ブログ内容の概要...",
+    content:
+      "ブログ内容の概要........................................................................................................................",
     image: "https://via.placeholder.com/150",
     category: "旅行",
     author: "山田 一郎",
@@ -49,7 +52,8 @@ const blogs = [
   {
     id: 6,
     title: "ブログタイトル 6",
-    content: "ブログ内容の概要...",
+    content:
+      "ブログ内容の概要.............................................................................................................",
     image: "https://via.placeholder.com/150",
     category: "旅行",
     author: "山田 一郎",
@@ -67,7 +71,7 @@ const blogs = [
   {
     id: 8,
     title: "ブログタイトル 8",
-    content: "ブログ内容の概要...",
+    content: "ブログ内容の概要.............................",
     image: "https://via.placeholder.com/150",
     category: "旅行",
     author: "山田 一郎",
@@ -87,21 +91,31 @@ const blogs = [
 export default function Home() {
   return (
     <>
-      <div>
-        <input type="text" placeholder="Search Blog Post" className="search-bar" />
-        <button className="search-button">検索</button>
+      <div className="search-bar">
+        <input type="text" placeholder="Search Blog Post" className="search-text" />
+        <SearchIcon className="search-button">検索</SearchIcon>
       </div>
 
       <main className="blog-list">
         {blogs.map((blog) => (
-          <article key={blog.id} className="blog-card">
-            <img src={blog.image} alt={blog.title} className="blog-image" />
-            <h2 className="blog-title">{blog.title}</h2>
-            <p className="blog-category">{blog.category}</p>
-            <p className="blog-author">{blog.author}</p>
-            <p className="blog-posted-at">{blog.postedAt}</p>
-            <p className="blog-content">{blog.content}</p>
-          </article>
+          // ブログ記事クリック時に該当ページに遷移
+          <Link key={blog.id} href={`/blog/${blog.id}`} passHref>
+            <article className="blog-card">
+              <img src={blog.image} alt={blog.title} className="blog-image" />
+
+              <div className="blog-header">
+                <h2 className="blog-title">{blog.title}</h2>
+                <span className="blog-category">{blog.category}</span>
+              </div>
+
+              <div className="blog-meta">
+                <p className="blog-author">{blog.author}</p>
+                <p className="blog-posted-at">{blog.postedAt}</p>
+              </div>
+
+              <p className="blog-content">{blog.content}</p>
+            </article>
+          </Link>
         ))}
       </main>
     </>
