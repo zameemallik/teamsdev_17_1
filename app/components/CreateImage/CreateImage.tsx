@@ -1,13 +1,12 @@
 "use client";
 import React, { useState,useRef } from "react";
+import styles from "./CreateImage.module.css"
 
-type ImageUploaderProps = {
-  styles: { [key: string]: string }; // CSS モジュールの型
-  onFileSelect: (file: File | null) => void; // ファイル選択時のコールバック
+type CreateImageProps = {
+  onFileSelect: (file: File | null) => void;
 };
 
-
-const ImageUploader: React.FC<ImageUploaderProps> = ({ styles, onFileSelect }) => {
+const CreateImage: React.FC<CreateImageProps> = ({ onFileSelect }) => {
   const [sizeError, setSizeError] = useState<boolean>(false);
   const [preview, setPreview] = useState<string | null>(null);
   const fileInputRef = useRef<HTMLInputElement | null>(null); // useRefでinput要素を管理
@@ -37,7 +36,6 @@ const ImageUploader: React.FC<ImageUploaderProps> = ({ styles, onFileSelect }) =
       onClick={handleClick}     >
       <input
         ref={fileInputRef}
-        // id="fileInput"
         type="file"
         accept="image/*"
         onChange={handleFileChange}
@@ -46,7 +44,7 @@ const ImageUploader: React.FC<ImageUploaderProps> = ({ styles, onFileSelect }) =
       {preview ? (
         <img src={preview} alt="Preview" className={styles.preview} />
       ) : sizeError ? (
-        <p style={{ color: "red" }}>５MB以下の画像を選択してください</p>
+        <p className={styles.alert}>５MB以下の画像を選択してください</p>
       ) : (
         <p>クリックして画像を選択してください</p>
       )}
@@ -54,4 +52,4 @@ const ImageUploader: React.FC<ImageUploaderProps> = ({ styles, onFileSelect }) =
   );
 };
 
-export default ImageUploader;
+export default CreateImage;

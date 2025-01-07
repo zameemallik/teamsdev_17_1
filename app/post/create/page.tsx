@@ -1,14 +1,14 @@
 "use client";
 
-import styles from "./writeblog.module.css";
+import styles from "./PostCreate.module.css";
 import React, { useState } from "react";
-import ImageUploader from "@/app/components/ImageUploader";
-import CreateTitle from "@/app/components/CreateTitle";
-import CreateDescription from "@/app/components/CreateDescription";
+import CreateImage from "@/app/components/CreateImage/CreateImage";
+import CreateTitle from "@/app/components/CreateTitle/CreateTitle";
+import CreateContent from "@/app/components/CreateContent/CreateContent";
 
 const PostCreatePage = () => {
   const [title, setTitle] = useState("");
-  const [description, setDescription] = useState("");
+  const [content, setContent] = useState("");
   const [image, setImage] = useState<File | null>(null);
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
@@ -18,15 +18,15 @@ const PostCreatePage = () => {
       console.log(image.name);
     }
     // eslint-disable-next-line no-console
-    console.log({ title, description });
+    console.log({ title, content });
   };
 
   return (
     <div className={styles.container}>
       <form className={styles.form} onSubmit={handleSubmit}>
-        <CreateTitle styles={styles} title={title} setTitle={setTitle} />
-        <ImageUploader styles={styles} onFileSelect={(file) => setImage(file)} />
-        <CreateDescription styles={styles} description={description} setDescription={setDescription} />
+        <CreateTitle title={title} setTitle={setTitle} />
+        <CreateImage onFileSelect={(file) => setImage(file)} />
+        <CreateContent content={content} setContent={setContent} />
       </form>
     </div>
   );

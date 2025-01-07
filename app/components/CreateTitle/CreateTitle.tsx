@@ -1,15 +1,14 @@
 "use client";
 import React, { useState } from "react";
-
+import styles from "./CreateTitle.module.css";
 
 type CreateTitleProps = {
-  styles: { [key: string]: string };
   title: string;
   setTitle: (value: string) => void;
 };
 
 
-const CreateTitle: React.FC<CreateTitleProps> = ({ styles, title, setTitle }) => {
+const CreateTitle: React.FC<CreateTitleProps> = ({ title, setTitle }) => {
   const [overText, setOverText] = useState<boolean>(false);
 
   const handleInputTitle = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -26,7 +25,7 @@ const CreateTitle: React.FC<CreateTitleProps> = ({ styles, title, setTitle }) =>
   return (
     <div>
       {overText ? (
-        <label className={styles.label} htmlFor="BlogTitleInput" style={{ color: "red" }}>
+        <label className={styles.labelRed} htmlFor="BlogTitleInput">
           50文字を超えています
         </label>
       ) : (
