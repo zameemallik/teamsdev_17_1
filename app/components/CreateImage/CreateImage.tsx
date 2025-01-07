@@ -1,6 +1,6 @@
 "use client";
-import React, { useState,useRef } from "react";
-import styles from "./CreateImage.module.css"
+import React, { useState, useRef } from "react";
+import styles from "./CreateImage.module.css";
 
 type CreateImageProps = {
   onFileSelect: (file: File | null) => void;
@@ -31,9 +31,7 @@ const CreateImage: React.FC<CreateImageProps> = ({ onFileSelect }) => {
   };
 
   return (
-    <div
-      className={styles.uploader}
-      onClick={handleClick}     >
+    <div className={styles.uploader} onClick={handleClick}>
       <input
         ref={fileInputRef}
         type="file"

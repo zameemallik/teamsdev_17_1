@@ -1,15 +1,15 @@
 import React, { useState } from "react";
 import styles from "./CreateContent.module.css";
 
-type CreateContentProps={
+type CreateContentProps = {
   content: string;
   setContent: (value: string) => void;
-}
+};
 
-const CreateContent:React.FC<CreateContentProps> = ({ content, setContent }) => {
+const CreateContent: React.FC<CreateContentProps> = ({ content, setContent }) => {
   const [overText, setOverText] = useState<boolean>(false);
 
-  const handleInputContent = (e:React.ChangeEvent<HTMLTextAreaElement>) => {
+  const handleInputContent = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     const inputText = e.target.value;
     if (inputText.length > 2000) {
       setOverText(true);
@@ -42,9 +42,7 @@ const CreateContent:React.FC<CreateContentProps> = ({ content, setContent }) => 
       />
 
       <div className={styles.buttonContainer}>
-        <button
-          className={styles.button}
-          type="submit">
+        <button className={styles.button} type="submit">
           create blog
         </button>
       </div>
