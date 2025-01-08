@@ -14,4 +14,7 @@
 .postItem h2 {
   text-align: left; /* タイトルを左寄せ */
   margin: 5px 0; /* タイトル上下に余白を設定 */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
