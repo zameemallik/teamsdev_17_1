@@ -1,5 +1,4 @@
 "use client";
-// pages/index.tsx
 import BlogMain from "@/app/components/BlogMain/BlogMain";
 import Thumbnail from "@/app/components/Thumbnail/Thumbnail";
 import React, { useState } from "react";
