@@ -1,6 +1,8 @@
 import "./bloghome.css";
 import Link from "next/link";
 import SearchIcon from "@mui/icons-material/Search";
+import React from 'react'
+
 
 const blogs = [
   {
@@ -86,9 +88,119 @@ const blogs = [
     author: "山田 一郎",
     postedAt: "2024-12-03 18:45",
   },
+  {
+    id: 10,
+    title: "ブログタイトル 9",
+    content: "ブログ内容の概要...",
+    image: "https://via.placeholder.com/150",
+    category: "旅行",
+    author: "山田 一郎",
+    postedAt: "2024-12-03 18:45",
+  },
+  {
+    id: 11,
+    title: "ブログタイトル 9",
+    content: "ブログ内容の概要...",
+    image: "https://via.placeholder.com/150",
+    category: "旅行",
+    author: "山田 一郎",
+    postedAt: "2024-12-03 18:45",
+  },
+  {
+    id: 12,
+    title: "ブログタイトル 9",
+    content: "ブログ内容の概要...",
+    image: "https://via.placeholder.com/150",
+    category: "旅行",
+    author: "山田 一郎",
+    postedAt: "2024-12-03 18:45",
+  },
+  {
+    id: 13,
+    title: "ブログタイトル 9",
+    content: "ブログ内容の概要...",
+    image: "https://via.placeholder.com/150",
+    category: "旅行",
+    author: "山田 一郎",
+    postedAt: "2024-12-03 18:45",
+  },
+  {
+    id: 14,
+    title: "ブログタイトル 9",
+    content: "ブログ内容の概要...",
+    image: "https://via.placeholder.com/150",
+    category: "旅行",
+    author: "山田 一郎",
+    postedAt: "2024-12-03 18:45",
+  },
+  {
+    id: 15,
+    title: "ブログタイトル 9",
+    content: "ブログ内容の概要...",
+    image: "https://via.placeholder.com/150",
+    category: "旅行",
+    author: "山田 一郎",
+    postedAt: "2024-12-03 18:45",
+  },
+  {
+    id: 16,
+    title: "ブログタイトル 9",
+    content: "ブログ内容の概要...",
+    image: "https://via.placeholder.com/150",
+    category: "旅行",
+    author: "山田 一郎",
+    postedAt: "2024-12-03 18:45",
+  },
+  {
+    id: 17,
+    title: "ブログタイトル 9",
+    content: "ブログ内容の概要...",
+    image: "https://via.placeholder.com/150",
+    category: "旅行",
+    author: "山田 一郎",
+    postedAt: "2024-12-03 18:45",
+  },
+  {
+    id: 18,
+    title: "ブログタイトル 9",
+    content: "ブログ内容の概要...",
+    image: "https://via.placeholder.com/150",
+    category: "旅行",
+    author: "山田 一郎",
+    postedAt: "2024-12-03 18:45",
+  },
+  {
+    id: 19,
+    title: "ブログタイトル 9",
+    content: "ブログ内容の概要...",
+    image: "https://via.placeholder.com/150",
+    category: "旅行",
+    author: "山田 一郎",
+    postedAt: "2024-12-03 18:45",
+  },
+  {
+    id: 20,
+    title: "ブログタイトル 9",
+    content: "ブログ内容の概要...",
+    image: "https://via.placeholder.com/150",
+    category: "旅行",
+    author: "山田 一郎",
+    postedAt: "2024-12-03 18:45",
+  },
+  {
+    id: 21,
+    title: "ブログタイトル 9",
+    content: "ブログ内容の概要...",
+    image: "https://via.placeholder.com/150",
+    category: "旅行",
+    author: "山田 一郎",
+    postedAt: "2024-12-03 18:45",
+  },
 ];
 
-export default function Home() {
+
+
+const BlogHome =()=> {
   return (
     <>
       <div className="search-bar">
@@ -121,3 +233,4 @@ export default function Home() {
     </>
   );
 }
+export default BlogHome
