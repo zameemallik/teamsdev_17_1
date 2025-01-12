@@ -88,7 +88,7 @@ const blogs = [
   },
 ];
 
-export default function Home() {
+export default function BlogHome() {
   return (
     <>
       <div className="search-bar">
