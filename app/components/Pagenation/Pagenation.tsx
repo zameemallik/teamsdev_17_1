@@ -8,8 +8,8 @@ type PagenationProps = {
 
 const Pagenation: React.FC<PagenationProps> = ({ postNumber }) => {
   const [currentPage, setCurrentPage] = useState(1);
-  const maxVisiblePages = 10; // 表示するページ番号の最大数
-  const totalPages = Math.ceil(postNumber / 12);
+  const maxVisiblePages = 10; // 表示するページ番号の最大数を設定する。
+  const totalPages = Math.ceil(postNumber / 12); // 表示される最大ポスト数で割る。とりあえす3×4⁼12を想定
   const startPage = Math.max(1, currentPage - Math.floor(maxVisiblePages / 2));
   const endPage = Math.min(totalPages, startPage + maxVisiblePages - 1);
 
