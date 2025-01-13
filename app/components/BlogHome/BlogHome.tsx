@@ -1,4 +1,4 @@
-import "./bloghome.css";
+import "./BlogHome.css";
 import Link from "next/link";
 import SearchIcon from "@mui/icons-material/Search";
 import React from 'react'
