@@ -1,12 +1,12 @@
 import React, { useState } from "react";
-import style from "./Pagenation.module.css";
+import style from "./Pagination.module.css";
 import { AiOutlineArrowRight, AiOutlineArrowLeft } from "react-icons/ai";
 
-type PagenationProps = {
+type PaginationProps = {
   postNumber: number; // postNumber の型を明示
 };
 
-const Pagenation: React.FC<PagenationProps> = ({ postNumber }) => {
+const Pagination: React.FC<PaginationProps> = ({ postNumber }) => {
   const [currentPage, setCurrentPage] = useState(1);
   const maxVisiblePages = 10; // 表示するページ番号の最大数を設定する。
   const totalPages = Math.ceil(postNumber / 12); // 表示される最大ポスト数で割る。とりあえす3×4⁼12を想定
@@ -21,7 +21,7 @@ const Pagenation: React.FC<PagenationProps> = ({ postNumber }) => {
   };
 
   return (
-    <div className={style.pagenation}>
+    <div className={style.pagination}>
       {/* 前へボタン */}
       <button
         className={style.previousButton}
@@ -39,7 +39,7 @@ const Pagenation: React.FC<PagenationProps> = ({ postNumber }) => {
           const page = startPage + index;
           return (
             <button
-              className={page === currentPage ? style.currentButton : style.pageButton}
+              className={page === currentPage ? style.currentButton : style.pagiButton}
               key={page}
               onClick={() => handlePageChange(page)}
               disabled={currentPage === page}
@@ -64,4 +64,4 @@ const Pagenation: React.FC<PagenationProps> = ({ postNumber }) => {
   );
 };
 
-export default Pagenation;
+export default Pagination;
