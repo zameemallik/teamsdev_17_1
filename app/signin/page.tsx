@@ -44,7 +44,7 @@ export default function SignIn() {
     }
   };
 
-  // // サインインの処理
+  //  サインインの処理
   // const handleSignIn = async (e: React.FormEvent) => {
   //   e.preventDefault();
 
