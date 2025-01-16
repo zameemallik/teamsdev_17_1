@@ -39,22 +39,18 @@
   transition: opacity 0.2s;
 }
 
+.navButton.primary {
+  background-color: #333;
+  color: #fff;
+  border: none;
+}
+
+.navButton:hover {
+  opacity: 0.8;
+}
+
 .userSection {
   position: relative;
-}
-
-.userIconButton {
-  border: none;
-  background: none;
-  padding: 0;
-  cursor: pointer;
-}
-
-.userIcon {
-  width: 35px;
-  height: 35px;
-  border-radius: 50%;
-  background-color: #ccc;
 }
 
 .modalBox {
@@ -71,12 +67,17 @@
   gap: 5px;
 }
 
-.navButton.primary {
-  background-color: #333;
-  color: #fff;
-  border: none;
+.modalUserName {
+  text-align: center;
+  font-size: 14px;
 }
 
-.navButton:hover {
-  opacity: 0.8;
+.modalLogoutButton {
+  padding: 3px 15px;
+  font-size: 14px;
+  margin: 0 auto;
+  background-color: #ff31318f;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
 }

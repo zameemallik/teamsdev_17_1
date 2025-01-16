@@ -4,6 +4,7 @@ import styles from "./Header.module.css";
 import Link from "next/link"; // Linkコンポーネントをインポート
 import EditIcon from "@mui/icons-material/Edit";
 import { User } from "@/lib/types";
+import UserIconButton from "../UserIconButton/UserIconButton";
 
 // ダミーデータ
 const user: User = {
@@ -64,36 +65,14 @@ export const Header = () => {
           )}
           {signedInUser && (
             <div className={styles.userSection}>
-              <button onClick={() => setIsOpen(!isOpen)} className={styles.userIconButton}>
-                <img
-                  className={styles.userIcon}
-                  src={signedInUser.imagePath}
-                  alt=""
-                  onError={(e) => (e.currentTarget.src = "/default_icon.jpg")}
-                />
-              </button>
+              <UserIconButton imagePath={user.imagePath} onClick={() => setIsOpen(!isOpen)} />
               {isOpen && (
                 <div className={styles.modalBox} ref={modalRef}>
-                  <p
-                    style={{
-                      textAlign: "center",
-                      fontSize: "14px",
-                    }}
-                  >
-                    {signedInUser?.name}
-                  </p>
+                  <p className={styles.modalUserName}>{signedInUser?.name}</p>
                   <button
                     // 本来はSignedOutApi呼び出しなどを行う。
                     onClick={() => setSignedInUser(null)}
-                    style={{
-                      padding: "3px 15px",
-                      fontSize: "14px",
-                      margin: " 0 auto",
-                      backgroundColor: "#FF31318F",
-                      border: "none",
-                      borderRadius: "50px",
-                      cursor: "pointer",
-                    }}
+                    className={styles.modalLogoutButton}
                   >
                     Logout
                   </button>
