@@ -3,16 +3,13 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import { Button } from "@mui/material";
-// import{sapabase}from "@/"
 import "./sign_in.css";
-// import { useRouter } from "next/navigation";
 
 export default function SignIn() {
   const [email, setEmail] = useState("");
   const [emailError, setEmailError] = useState("");
   const [password, setPassword] = useState("");
   const [passwordError, setPasswordError] = useState("");
-  // const router=useRouter()
 
   // メールアドレスの入力を確認する
   const inputEmail = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -43,39 +40,6 @@ export default function SignIn() {
       setPasswordError("");
     }
   };
-
-  //  サインインの処理
-  // const handleSignIn = async (e: React.FormEvent) => {
-  //   e.preventDefault();
-
-  //   try{
-  //     const{data,error:signInError}=await supabase.auth.signInWithPassword({
-  //       email,
-  //       password,
-  //     })
-
-  //     if(signInError){
-  //       throw new Error(signInError.message);
-  //     }
-
-  //     if(data.user){
-  //       console.log("サインイン成功",data.user);
-  //       router.push("/app");
-  //     }else {
-  //       console.warn("サインインデータが取得できませんでした");
-  //       alert("サインインに失敗しました。もう一度お試しください。");
-  //     }
-  //     }catch(error){
-  //       if(error instanceof Error){
-  //         console.error("サインインエラー:", error.message);
-  //     alert(`サインインエラー: ${error.message}`);
-  //       }else{
-  //         console.error("予期しないエラー:", error);
-  //     alert("予期しないエラーが発生しました");
-  //       }
-  //     }
-  //   }
-  // };
 
   return (
     <div className="signin-container">
