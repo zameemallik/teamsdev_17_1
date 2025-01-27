@@ -1,9 +1,9 @@
 import React from "react";
 import styles from "./Comment.module.css";
-import { BlogComment } from "@/lib/types";
-import calculateTimeAgo from "@/lib/util/calculateTimeAgo";
 import UserIconButton from "../UserIconButton/UserIconButton";
 import { useRouter } from "next/navigation";
+import { BlogComment } from "lib/types";
+import calculateTimeAgo from "lib/util/calculateTimeAgo";
 
 type Props = {
   comment: BlogComment;

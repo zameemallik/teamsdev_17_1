@@ -2,9 +2,9 @@
 
 import styles from "./PostCreate.module.css";
 import React, { useState } from "react";
-import CreateImage from "@/app/components/CreateImage/CreateImage";
-import CreateTitle from "@/app/components/CreateTitle/CreateTitle";
-import CreateContent from "@/app/components/CreateContent/CreateContent";
+import CreateTitle from "@components/CreateTitle/CreateTitle";
+import CreateImage from "@components/CreateImage/CreateImage";
+import CreateContent from "@components/CreateContent/CreateContent";
 
 const PostCreatePage = () => {
   const [title, setTitle] = useState("");
