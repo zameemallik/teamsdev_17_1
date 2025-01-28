@@ -36,9 +36,10 @@ export default function PostHome() {
         // console.log("Fetched Data:", data);
 
         const formattedData = data.map((post) => {
-          const category = post.categories[0]?.name || "未分類";
-          const author = post.users[0]?.name || "匿名";
-          const postedAt = post.created_at || new Date(post.created_at).toLocaleString();
+          // const category = post.categories[0]?.name || "未分類";
+          const category = post.categories.name || "未分類";
+          const author = post.users.name || "匿名";
+          const postedAt = post.created_at && new Date(post.created_at).toLocaleString();
 
           // console.log("Formatted Post:", {
           //   id: post.id,
